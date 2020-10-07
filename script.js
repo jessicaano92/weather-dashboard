@@ -5,6 +5,8 @@ var APIkey = "0ba0c1d4b48af80e63d116478eae89cc"
 
 
 $(document).ready(function() {
+
+  
             
 
 var cities = JSON.parse(localStorage.getItem("cities")) || [];
@@ -12,7 +14,8 @@ var cities = JSON.parse(localStorage.getItem("cities")) || [];
 
 
 
-$("#search-button").on("click", function() {
+$("#search-button").on("click", function(e) {
+  e.preventDefault()
   var searchCity = $("#search-value").val();       //event listener for search button
   $("#search-value").val("");
   getCity(searchCity);
@@ -80,16 +83,16 @@ function getCity(searchCity) {
 }
 
         function getForecast(searchCity) {
-          console.log("it worked!");
+          
           $.ajax({
             type: "GET",
-            url: 'https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${APIkey}&units=imperial',
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + APIkey + "&units=imperial",
             dataType:"json"
            }).then(function(data) {
-            
+            console.log('forecast', data)
             
             $("#forecast").html("<h4 class='mt-3'> 5-Day Forecast:</h4>").append("<div class=\"row\">");
-                for (i = 0; i < data.length; i++){
+                for (i = 0; i < data.list.length; i++){
                     if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
                       var col = $("<div>").addClass("col-md-2");
                       var card = $("<div>").addClass("card bg-primary text-white");
@@ -108,3 +111,6 @@ function getCity(searchCity) {
         }
 
       })
+
+
+     
