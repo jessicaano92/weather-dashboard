@@ -10,6 +10,8 @@ $(document).ready(function() {
 var cities = JSON.parse(localStorage.getItem("cities")) || [];
 
 
+
+
 $("#search-button").on("click", function() {
   var searchCity = $("#search-value").val();       //event listener for search button
   $("#search-value").val("");
@@ -46,8 +48,9 @@ function getCity(searchCity) {
       method: "GET",
       url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + APIkey + "&units=imperial",
       dataType: "json",
-      }).then(function (data) {
-      
+      }).then(function (response) {
+        console.log(response);
+     
         if (cities.indexOf(searchCity) === -1) {
           cities.push(searchCity)
 
@@ -60,10 +63,10 @@ function getCity(searchCity) {
         //cards for temperature, wind, image, humidity
         var card = $("<div>").addClass("card")
         var title = $("<h4>").text("City: " + searchCity)
-        var wind = $("<div>").addClass("card-text").text("Wind Speed: " + data.wind.speed)
-        var humid = $("<div>").addClass("card-text").text("Humidity: " + data.main.humidity)
-        var temp = $("<div>").addClass("card-text").text("Temperature: " +  data.main.temp)
-        var cardBody = $("<div>").addClass("card-body")
+        var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed)
+        var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity)
+        var temp = $("<p>").addClass("card-text").text("Temperature: " +  data.main.temp)
+        var cardBody = $("<p>").addClass("card-body")
         var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png" )
         cardBody.append(title, temp, img, humid, wind);
 
@@ -83,7 +86,7 @@ function getCity(searchCity) {
             url: 'https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${APIkey}&units=imperial',
             dataType:"json"
            }).then(function(data) {
-            console.log(data);
+            
             
             $("#forecast").html("<h4 class='mt-3'> 5-Day Forecast:</h4>").append("<div class=\"row\">");
                 for (i = 0; i < data.length; i++){
