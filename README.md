@@ -3,6 +3,7 @@
 This weather dashboard allows for the user to input a city of their choosing and see the stats for that city including temperature, humidity, UV index, wind speed, and more. All cities typed in are supposed to be saved to local storage for that user to go back and see whenever they want. Each city the user types and searches will come up with the said information about that said along with the 5-day forecast.
 
 I built this homework with trying to understand the functionality behind API's and Javascript in general. Unfortunately, I was unable to make the functionality work. I went back and did my best to debug and was unsuccessful. 
+Update: I was able to debug with some help. The javascript works great! Current weather shows along with the 5 day forecast of each city the user searches along with local storage.
 
 
 ##Usage
