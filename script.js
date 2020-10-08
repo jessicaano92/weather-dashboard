@@ -64,8 +64,8 @@ function getCity(searchCity) {
       method: "GET",
       url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + APIkey + "&units=imperial",
       dataType: "json",
-      }).then(function (response) {
-        console.log(response);
+      }).then(function (data) {
+        console.log(data);
      
         if (cities.indexOf(searchCity) === -1) {
           cities.push(searchCity)
