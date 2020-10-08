@@ -10,6 +10,7 @@ I built this homework with trying to understand the functionality behind API's a
 
 <img src="https://github.com/jessicaano92/weather-dashboard/blob/main/images/img2.png">
 <img src="https://github.com/jessicaano92/weather-dashboard/blob/main/images/img3.png">
+<img src="https://github.com/jessicaano92/weather-dashboard/blob/main/images/img4.png">
 
 
 ## Credits
