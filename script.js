@@ -104,7 +104,7 @@ function getCity(searchCity) {
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + APIkey + "&units=imperial",
             dataType:"json"
            }).then(function(data) {
-            console.log('forecast', data)
+            console.log("forecast", data)
             
             $("#forecast").html("<h4 class='mt-3'> 5-Day Forecast:</h4>").append("<div class=\"row\">");
                 for (i = 0; i < data.list.length; i++){
@@ -113,9 +113,9 @@ function getCity(searchCity) {
                       var col = $("<div>").addClass("col-md-2");
                       var card = $("<div>").addClass("card bg-primary text-white");
                       var body = $("<div>").addClass("card-body p-2");
-                      var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt.toLocalDateString()));
+                      var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt.toLocaleDateString()));
                       var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png" );
-                      var p1 = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp_max + ' F');
+                      var p1 = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp_max + 'F');
                       var p2 = $("<p>").addClass("card-text").text("Humidity " + data.list[i].main.humidity);
 
 
