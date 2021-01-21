@@ -7,6 +7,7 @@ Update: I was able to debug with some help. The javascript works great! Current 
 
 ## Technology Used
 
+HTML, CSS, JavaScript, ajax
 
 ##Usage
 
