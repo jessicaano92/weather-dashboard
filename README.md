@@ -5,6 +5,8 @@ This weather dashboard allows for the user to input a city of their choosing and
 I built this homework with trying to understand the functionality behind API's and Javascript in general. Unfortunately, I was unable to make the functionality work. I went back and did my best to debug and was unsuccessful. 
 Update: I was able to debug with some help. The javascript works great! Current weather shows along with the 5 day forecast of each city the user searches along with local storage.
 
+## Technology Used
+
 
 ##Usage
 
@@ -42,4 +44,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
+Github Link- https://jessicaano92.github.io/weather-dashboard/
